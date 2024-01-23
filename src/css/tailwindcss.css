@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .xdyouh1 {
+        @apply text-3xl text-center py-4 font-bold;
+    }
+    .xdyouh2 {
+        @apply text-2xl text-start py-4 font-bold;
+    }
+    
+    ol {
+        counter-reset: xdyouli-counter;
+    }
+    .xdyouli {
+        counter-increment: xdyouli-counter;
+        margin-left: 20px; /* 调整左边距，确保序号不与文本重叠 */
+    }
+
+    .xdyouli::before {
+        content: counter(xdyouli-counter) ". ";
+        font-weight: bold; /* 可选：使序号加粗 */
+        margin-right: 5px; /* 可选：为序号和文本之间添加一些空间 */
+    }
+}
