@@ -43,8 +43,11 @@
     </div>
 
     <div class="relative mt-12 lg:mt-0 ">
-      <img :src="isDarkMode ? darkImagePath : lightImagePath"
-           class="rounded-[32px] h-[700px] object-cover shadow-xl"
+      <img src="../assets/screenshot.webp"
+           class="block dark:hidden rounded-[32px] h-[700px] object-cover shadow-xl"
+           alt="screenshot"/>
+      <img src="../assets/darkScreenshot.png"
+           class="hidden dark:block rounded-[32px] h-[700px] object-cover shadow-xl"
            alt="screenshot"/>
       <div
           class="inline-block absolute bg-[#344F77] rounded-full rotate-[35deg] max-sm:invisible  left-[-40%]  lg:left-[-50%]"
@@ -73,14 +76,6 @@
 
 <script setup>
 import {computed, onMounted, ref} from "vue";
-
-// Dark Mode Screenshot
-const isDarkMode = computed(() => {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches;
-});
-
-import lightImagePath from '../assets/screenshot.webp';
-import darkImagePath from '../assets/darkScreenshot.png';
 
 // Tag Switch
 const switchTag = ref(false);
